@@ -27,6 +27,11 @@ class GildedRose {
             return;
         }
 
+        if (item.name.equals("Sulfuras, Hand of Ragnaros")) {
+            updateSulfuras(item);
+            return;
+        }
+
         if (!item.name.equals("Aged Brie")
                 && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
             if (item.quality > 0) {
@@ -75,6 +80,10 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private void updateSulfuras(Item item) {
+
     }
 
     private void updateAgedBrie(Item item) {
