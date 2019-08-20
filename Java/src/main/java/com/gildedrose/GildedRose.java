@@ -32,58 +32,26 @@ class GildedRose {
             return;
         }
 
-        if (!item.name.equals("Aged Brie")
-                && !item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-            if (item.quality > 0) {
-                if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                    item.quality = item.quality - 1;
-                }
-            }
-        } else {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                    if (item.sellIn < 11) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
-                    }
-
-                    if (item.sellIn < 6) {
-                        if (item.quality < 50) {
-                            item.quality = item.quality + 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn = item.sellIn - 1;
-        }
-
-        if (item.sellIn < 0) {
-            if (!item.name.equals("Aged Brie")) {
-                if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                    if (item.quality > 0) {
-                        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-                            item.quality = item.quality - 1;
-                        }
-                    }
-                } else {
-                    item.quality = item.quality - item.quality;
-                }
-            } else {
-                if (item.quality < 50) {
-                    item.quality = item.quality + 1;
-                }
-            }
+        if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            updateBackstage(item);
         }
     }
 
-    private void updateSulfuras(Item item) {
+    private void updateBackstage(Item item) {
+        if (item.sellIn > 10) {
+            item.quality += 1;
+        } else if (item.sellIn > 5) {
+            item.quality += 2;
+        } else if (item.sellIn > 0){
+            item.quality += 3;
+        } else {
+            item.quality = 0;
+        }
+        item.sellIn -=1;
+    }
 
+    private void updateSulfuras(Item item) {
+        //Legendary Item, nothing changes!
     }
 
     private void updateAgedBrie(Item item) {
