@@ -45,7 +45,7 @@ Just for clarification, an item can never have its Quality increase above 50, ho
             Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 25), new Item("Backstage passes to a TAFKAL80ETC concert", 14, 26)),
             Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 10, 25), new Item("Backstage passes to a TAFKAL80ETC concert", 9, 27)),
             Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 5, 25), new Item("Backstage passes to a TAFKAL80ETC concert", 4, 28)),
-            Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 0, 28), new Item("Backstage passes to a TAFKAL80ETC concert", -1, 0)),
+            Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 0, 28), new Item("Backstage passes to a TAFKAL80ETC concert", -1, 0))
             // Arguments.of(new Item("Conjured", 1, 28), new Item("Backstage passes to a TAFKAL80ETC concert", 0, 26))
 
         );
