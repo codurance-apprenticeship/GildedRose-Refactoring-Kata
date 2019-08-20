@@ -40,6 +40,7 @@ Just for clarification, an item can never have its Quality increase above 50, ho
             Arguments.of(new Item("zero quality Item", -10, 0), new Item("zero quality Item", -11, 0)),
             Arguments.of(new Item("Aged Brie", 10, 0), new Item("Aged Brie", 9, 1)),
             Arguments.of(new Item("Aged Brie", -10, 0), new Item("Aged Brie", -11, 2)),
+            Arguments.of(new Item("Aged Brie", 15, 50), new Item("Aged Brie", 14, 50)),
             Arguments.of(new Item("overqualified item", 1, 80), new Item("overqualified item", 0, 79)),
             Arguments.of(new Item("Sulfuras, Hand of Ragnaros", 5, 25), new Item("Sulfuras, Hand of Ragnaros", 5, 25)),
             Arguments.of(new Item("Backstage passes to a TAFKAL80ETC concert", 15, 25), new Item("Backstage passes to a TAFKAL80ETC concert", 14, 26)),
