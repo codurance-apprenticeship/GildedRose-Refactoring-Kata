@@ -75,7 +75,7 @@ public class GolderMasterSnapshot {
             "name, sellIn, quality\n"+
             "Regular Item, 10, 20\n"+
             "Regular Item, 0, 20\n"+
-            "Regular Item, -1, 2\n"+
+            "Regular Item, -1, 20\n"+
             "Regular Item, 10, 0\n"+
             "Aged Brie, 10, 10\n"+
             "Aged Brie, 0, 10\n"+
