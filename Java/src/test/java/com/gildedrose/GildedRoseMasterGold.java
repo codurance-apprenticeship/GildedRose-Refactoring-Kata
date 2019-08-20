@@ -14,7 +14,7 @@ public class GildedRoseMasterGold {
     @Test
     public void add_item_with_proper_values() {
         Item simple_item = new Item("Simple Item", 10, 20);
-        Item[] items = new Item[] {simple_item};
+        Item[] items = new Item[]{simple_item};
         GildedRose app = new GildedRose(items);
 
         assertEquals("Simple Item", simple_item.name);
@@ -22,21 +22,25 @@ public class GildedRoseMasterGold {
         assertEquals(20, simple_item.quality);
     }
 
-    private static Stream<Arguments> provideItems(){
+    private static Stream<Arguments> provideItems() {
         return Stream.of(
-                (Arguments.of(new Item("Item1",10,20),new Item("Item1",10,20)))
-        );
+                        Arguments.of(new Item("Item1", 10, 20), new Item("Item1", 9, 19)),
+                        Arguments.of(new Item("Item2", 10, 20), new Item("Item2", 9, 19))
+                );
     }
 
     @ParameterizedTest
-    @MethodSource("proviceItems")
-    public void cover_all_functionality(Item initalItem, Item expectedItem){
+    @MethodSource("provideItems")
+    public void cover_all_functionality(Item initalItem, Item expectedItem) {
         Item item = initalItem;
-        Item[] items = new Item[] {item};
+        Item[] items = new Item[]{item};
         GildedRose app = new GildedRose(items);
 
+        app.updateQuality();
         assertEquals(expectedItem.name, item.name);
         assertEquals(expectedItem.sellIn, item.sellIn);
         assertEquals(expectedItem.quality, item.quality);
     }
+
+
 }
