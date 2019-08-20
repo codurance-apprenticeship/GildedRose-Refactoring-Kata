@@ -13,6 +13,7 @@ public class GolderMasterSnapshot {
                 new Item("Regular Item", 10, 20),
 
                 // Once the sell by date has passed, Quality degrades twice as fast
+                new Item("Regular Item", 1, 20),
                 new Item("Regular Item", 0, 20),
                 new Item("Regular Item", -1, 20),
 
@@ -21,6 +22,7 @@ public class GolderMasterSnapshot {
 
                 // "Aged Brie" actually increases in Quality the older it gets
                 new Item("Aged Brie", 10, 10),
+                // FIXME: not covered in documentation; see code;
                 new Item("Aged Brie", 0, 10),
 
                 // The Quality of an item is never more than 50
@@ -74,6 +76,7 @@ public class GolderMasterSnapshot {
     "-------- day 0 --------\n"+
             "name, sellIn, quality\n"+
             "Regular Item, 10, 20\n"+
+            "Regular Item, 1, 20\n"+
             "Regular Item, 0, 20\n"+
             "Regular Item, -1, 20\n"+
             "Regular Item, 10, 0\n"+
@@ -95,6 +98,7 @@ public class GolderMasterSnapshot {
             "-------- day 1 --------\n"+
             "name, sellIn, quality\n"+
             "Regular Item, 9, 19\n"+
+            "Regular Item, 0, 19\n"+
             "Regular Item, -1, 18\n"+
             "Regular Item, -2, 18\n"+
             "Regular Item, 9, 0\n"+
