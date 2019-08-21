@@ -20,10 +20,7 @@ public class NormalGoods extends Goods {
     @Override
     public void update() {
         updateQuality();
-
         deductSellIn();
-
-        limitQualityOverDownLimit();
     }
 
     private void updateQuality() {
@@ -32,6 +29,8 @@ public class NormalGoods extends Goods {
         } else {
             this.quality -= DEFAULT_QUALITY_DEPRECIATION;
         }
+
+        limitQualityOverDownLimit();
     }
 
     private void limitQualityOverDownLimit() {
