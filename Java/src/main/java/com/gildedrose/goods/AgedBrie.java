@@ -2,6 +2,8 @@ package com.gildedrose.goods;
 
 public class AgedBrie extends Goods {
     public final static String NAME = "Aged Brie";
+    private static final int DEFAULT_QUALITY_INCREASE = 1;
+    private static final int TWO_FOLD_QUALITY_INCREASE = 2;
 
     public AgedBrie(int sellIn, int quality) {
         super(sellIn, quality);
@@ -9,17 +11,26 @@ public class AgedBrie extends Goods {
 
     @Override
     public void update() {
+
+        updateQuality();
+
+        deductSellIn();
+
+        keepQualityUnderUplimit();
+    }
+
+    private void updateQuality() {
         // FIXME: documentation doesn't cover the case that aged brie's quality get doubled after expire
-        if (this.sellIn > 0) {
-            this.quality += 1;
+        if (isExpired()) {
+            this.quality += TWO_FOLD_QUALITY_INCREASE;
         } else {
-            this.quality += 2;
+            this.quality += DEFAULT_QUALITY_INCREASE;
         }
+    }
 
-        this.sellIn -= 1;
-
-        if (this.quality > 50) {
-            this.quality = 50;
+    private void keepQualityUnderUplimit() {
+        if (this.quality > UPLIMIT_FOR_QUALITY) {
+            this.quality = UPLIMIT_FOR_QUALITY;
         }
     }
 

@@ -1,6 +1,9 @@
 package com.gildedrose.goods;
 
-public class NormalGoods extends Goods{
+public class NormalGoods extends Goods {
+
+    private static final int DEFAULT_QUALITY_DEPRECIATION = 1;
+    private static final int TWO_FOLD_DEPRECIATION = 2;
 
     private String name;
 
@@ -16,14 +19,24 @@ public class NormalGoods extends Goods{
 
     @Override
     public void update() {
-        if (this.sellIn > 0) {
-            this.quality -= 1;
+        updateQuality();
+
+        deductSellIn();
+
+        limitQualityOverDownLimit();
+    }
+
+    private void updateQuality() {
+        if (isExpired()) {
+            this.quality -= TWO_FOLD_DEPRECIATION;
         } else {
-            this.quality -= 2;
+            this.quality -= DEFAULT_QUALITY_DEPRECIATION;
         }
-        this.sellIn -= 1;
-        if (this.quality <= 0) {
-            this.quality = 0;
+    }
+
+    private void limitQualityOverDownLimit() {
+        if (this.quality <= QUALITY_DOWNLIMIT) {
+            this.quality = QUALITY_DOWNLIMIT;
         }
     }
 }

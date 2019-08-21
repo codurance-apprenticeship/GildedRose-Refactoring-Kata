@@ -9,7 +9,7 @@ public class Sulfuras extends Goods {
 
     @Override
     public void update() {
-
+        // do nothing
     }
 
     @Override
