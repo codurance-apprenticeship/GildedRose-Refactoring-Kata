@@ -10,9 +10,9 @@ public class GildedRoseTest {
     @Test
     public void combinatorial_test() {
         String[] names= {
-                GildedRose.AGED_BRIE,
-                GildedRose.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT,
-                GildedRose.SULFURAS_HAND_OF_RAGNAROS,
+                AgedBrie.AGED_BRIE,
+                BackstagePass.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT,
+                Sulfuras.SULFURAS_HAND_OF_RAGNAROS,
                 "Regular Items 1",
                 "Regular Items 2"
         };
@@ -28,7 +28,7 @@ public class GildedRoseTest {
     }
 
     private String getItemResultAfterUpdate(String name, int sellIn, int quality) {
-        Item[] items = new Item[] { new Item(name, sellIn, quality) };
+        Item[] items = new Item[] {Item.createItem(name, sellIn, quality)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         return items[0].toString();
