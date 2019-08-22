@@ -8,7 +8,7 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    void updateQuality() {
+    void update() {
         if (quality < 50) {
             quality = quality + 1;
 

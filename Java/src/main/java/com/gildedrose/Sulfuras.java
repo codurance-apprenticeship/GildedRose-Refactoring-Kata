@@ -8,6 +8,6 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    void updateQuality() {
+    void update() {
     }
 }

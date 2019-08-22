@@ -24,6 +24,9 @@ public class Item {
 
             case BackstagePass.BACKSTAGE_PASSES_TO_A_TAFKAL_80_ETC_CONCERT:
                 return new BackstagePass(sellIn, quality);
+
+            case Conjured.CONJURED_MANA_CAKE:
+                return new Conjured(sellIn, quality);
         }
 
         return new Item(name, sellIn, quality);
@@ -34,7 +37,7 @@ public class Item {
         return this.name + ", " + this.sellIn + ", " + this.quality;
     }
 
-    void updateQuality() {
+    void update() {
         if (quality > 0) {
             quality = quality - 1;
         }
