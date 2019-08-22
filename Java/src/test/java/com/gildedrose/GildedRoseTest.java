@@ -7,14 +7,6 @@ import java.util.stream.IntStream;
 
 public class GildedRoseTest {
 
-//    @Test
-//    public void foo() {
-//        Item[] items = new Item[] { new Item("foo", 0, 0) };
-//        GildedRose app = new GildedRose(items);
-//        app.updateQuality();
-//        assertEquals("fixme", app.items[0].name);
-//    }
-
     @Test
     public void combinatorial_test() {
         String[] names= {
@@ -26,7 +18,6 @@ public class GildedRoseTest {
         };
 
         Integer[] range = IntStream.range(-100, 101).boxed().toArray(Integer[]::new);
-        // -100 ~ 100
         CombinationApprovals.verifyAllCombinations(
                 this::getItemResultAfterUpdate,
                 names,
