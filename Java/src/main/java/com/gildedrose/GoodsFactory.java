@@ -4,6 +4,10 @@ import com.gildedrose.goods.*;
 
 public class GoodsFactory {
     Goods getGoods(Item item) {
+        if(item.name.startsWith(ConjuredItems.PREFIX)) {
+            return new ConjuredItems(item.name, item.sellIn, item.quality);
+        }
+
         switch (item.name){
             case AgedBrie.NAME:
                 return new AgedBrie(item.sellIn, item.quality);
