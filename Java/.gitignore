@@ -1,8 +1,7 @@
-.idea/
-*.iml
-target/
+.idea
+.gradle
+build
 
-.classpath
-.project
-bin/
-.settings/
+out/
+
+.DS_Store
